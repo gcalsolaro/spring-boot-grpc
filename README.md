@@ -1,7 +1,7 @@
 # Spring Boot gRPC
 
 ![Java CI with Maven](https://github.com/gcalsolaro/spring-boot-grpc/workflows/Java%20CI%20with%20Maven/badge.svg)
-> **Sample application using Hazelcast and Spring Boot**
+> **Sample application using Google gRPC Protobuf and Spring Boot**
 
 
 ## Table of Contents
