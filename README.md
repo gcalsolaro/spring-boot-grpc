@@ -15,11 +15,11 @@
 
 ## Architecture
 
-A data grid is an architecture or set of services that gives individuals or groups of users the ability to access, modify and transfer extremely large amounts of geographically distributed data for research purposes.
-In this example the technology stack used is provided by Spring Cloud, in particular:
+gRPC (gRPC Remote Procedure Calls) is an open source remote procedure call (RPC) system initially developed at Google in 2015. It uses HTTP/2 for transport, Protocol Buffers as the interface description language. It generates cross-platform client and server bindings for many languages. Most common usage scenarios include connecting services in microservices style architecture.
+In this example the technology stack used is provided by Spring and Google, in particular:
 
 * **_Spring Boot_** - 2.2.1.RELEASE
-* **_Spring Hazelcast Integration_** - Centralized external configuration management
+* **_Google Protobuf Protocol for client/server_** - 1.4.0
 
 ## Prerequisites
 * **_JDK 8_** - Install JDK 1.8 version
