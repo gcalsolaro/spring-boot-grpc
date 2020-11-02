@@ -1,0 +1,29 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.gcalsolaro.grpc.model;
+
+import "google/protobuf/timestamp.proto";
+
+import "Utente.proto";
+import "Documento.proto";
+
+message Istanza {
+	int32 idIstanza = 1;
+	string archiviazione = 2;
+	string cFiscale = 3;
+	string cIstanza = 4;
+	string denominazione = 5;
+	google.protobuf.Timestamp dtDomanda = 6;
+	google.protobuf.Timestamp dtOraAcquisizione = 7;
+	google.protobuf.Timestamp dtOraIns = 8;
+	google.protobuf.Timestamp dtOraMod = 9;
+	string info = 10;
+	string jsonPratica = 11;
+	string oggetto = 12;
+	int32 proIstanza = 13;
+	string useridIns = 14;
+	string useridMod = 15;
+	google.protobuf.Timestamp dtOraAnnullamento = 16;
+	Utente utente = 17;
+	repeated Documento documenti = 18;
+}	

@@ -1,0 +1,23 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.gcalsolaro.grpc.model;
+
+import "google/protobuf/timestamp.proto";
+
+message Utente {
+	int32 idUtente = 1;
+	string cComune = 2;
+	string cFiscale = 3;
+	string cognome = 4;
+	string descrizioneComune = 5;
+	google.protobuf.Timestamp dtNascita = 6;
+	google.protobuf.Timestamp dtOraIns = 7;
+	google.protobuf.Timestamp dtOraMod = 8;
+	google.protobuf.Timestamp dtRegistrazione = 9;
+	string email = 10;
+	string nome = 11;
+	string prov = 12;
+	string stato = 13;
+	string useridIns = 14;
+	string useridMod = 15;
+}	
