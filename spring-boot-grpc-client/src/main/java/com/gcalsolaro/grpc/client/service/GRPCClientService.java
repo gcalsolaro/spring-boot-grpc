@@ -2,9 +2,9 @@ package com.gcalsolaro.grpc.client.service;
 
 import org.springframework.stereotype.Service;
 
-import com.gcalsolaro.grpc.model.IstanzaRequest;
-import com.gcalsolaro.grpc.model.IstanzaResponse;
-import com.gcalsolaro.grpc.model.IstanzaServiceGrpc;
+import com.gcalsolaro.grpc.artifact.service.IstanzaRequest;
+import com.gcalsolaro.grpc.artifact.service.IstanzaResponse;
+import com.gcalsolaro.grpc.artifact.service.IstanzaServiceGrpc;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;

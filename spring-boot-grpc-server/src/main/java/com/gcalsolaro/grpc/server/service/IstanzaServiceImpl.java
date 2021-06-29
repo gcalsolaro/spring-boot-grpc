@@ -1,11 +1,11 @@
 package com.gcalsolaro.grpc.server.service;
 
-import com.gcalsolaro.grpc.model.Documento;
-import com.gcalsolaro.grpc.model.Istanza;
-import com.gcalsolaro.grpc.model.IstanzaRequest;
-import com.gcalsolaro.grpc.model.IstanzaResponse;
-import com.gcalsolaro.grpc.model.IstanzaServiceGrpc.IstanzaServiceImplBase;
-import com.gcalsolaro.grpc.model.Utente;
+import com.gcalsolaro.grpc.artifact.model.Documento;
+import com.gcalsolaro.grpc.artifact.model.Istanza;
+import com.gcalsolaro.grpc.artifact.model.Utente;
+import com.gcalsolaro.grpc.artifact.service.IstanzaRequest;
+import com.gcalsolaro.grpc.artifact.service.IstanzaResponse;
+import com.gcalsolaro.grpc.artifact.service.IstanzaServiceGrpc.IstanzaServiceImplBase;
 
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;

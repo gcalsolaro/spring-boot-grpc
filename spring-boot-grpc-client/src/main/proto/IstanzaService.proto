@@ -1,6 +1,6 @@
 syntax = "proto3";
 option java_multiple_files = true;
-package com.gcalsolaro.grpc.model;
+package com.gcalsolaro.grpc.artifact.service;
 
 import "Istanza.proto";
 
@@ -10,7 +10,7 @@ message IstanzaRequest {
 
 message IstanzaResponse {
     bool esito = 1;
-    com.gcalsolaro.grpc.model.Istanza istanza = 2;
+    com.gcalsolaro.grpc.artifact.model.Istanza istanza = 2;
 } 
 
 service IstanzaService {

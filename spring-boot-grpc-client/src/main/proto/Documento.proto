@@ -1,6 +1,6 @@
 syntax = "proto3";
 option java_multiple_files = true;
-package com.gcalsolaro.grpc.model;
+package com.gcalsolaro.grpc.artifact.model;
 
 import "google/protobuf/timestamp.proto";
 
