@@ -1,0 +1,12 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.gcalsolaro.grpc.artifact.model;
+
+import "User.proto";
+
+message Instance {
+	int32 idInstance = 1;
+	string cInstance = 2;
+	string info = 10;
+	User user = 17;
+}	

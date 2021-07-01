@@ -1,0 +1,18 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.gcalsolaro.grpc.artifact.service;
+
+import "Instance.proto";
+
+message InstanceRequest {
+    int32 idInstance = 1;
+}
+
+message InstanceResponse {
+    bool success = 1;
+    com.gcalsolaro.grpc.artifact.model.Instance instance = 2;
+} 
+
+service InstanceService {
+    rpc findInstanceApi(InstanceRequest) returns (InstanceResponse);
+}

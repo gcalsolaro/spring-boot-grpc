@@ -2,9 +2,9 @@ package com.gcalsolaro.grpc.client.service;
 
 import org.springframework.stereotype.Service;
 
-import com.gcalsolaro.grpc.artifact.service.IstanzaRequest;
-import com.gcalsolaro.grpc.artifact.service.IstanzaResponse;
-import com.gcalsolaro.grpc.artifact.service.IstanzaServiceGrpc;
+import com.gcalsolaro.grpc.artifact.service.InstanceRequest;
+import com.gcalsolaro.grpc.artifact.service.InstanceResponse;
+import com.gcalsolaro.grpc.artifact.service.InstanceServiceGrpc;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -17,13 +17,13 @@ public class GRPCClientService {
 	 * @param idBozza
 	 * @return
 	 */
-	public IstanzaResponse recuperaIstanzaApi(Integer idIstanza) {
+	public InstanceResponse findInstance(Integer idInstance) {
 		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090).usePlaintext().build();
 
-		IstanzaServiceGrpc.IstanzaServiceBlockingStub stub = IstanzaServiceGrpc.newBlockingStub(channel);
+		InstanceServiceGrpc.InstanceServiceBlockingStub stub = InstanceServiceGrpc.newBlockingStub(channel);
 
-		IstanzaResponse response = stub
-				.recuperaIstanzaApi(IstanzaRequest.newBuilder().setIdIstanza(idIstanza).build());
+		InstanceResponse response = 
+				stub.findInstanceApi(InstanceRequest.newBuilder().setIdInstance(idInstance).build());
 		channel.shutdown();
 
 		return response;

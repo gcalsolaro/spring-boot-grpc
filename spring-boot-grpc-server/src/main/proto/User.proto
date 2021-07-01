@@ -1,0 +1,13 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.gcalsolaro.grpc.artifact.model;
+
+import "google/protobuf/timestamp.proto";
+
+message User {
+	int32 idUser = 1;
+	string fiscalCode = 2;
+	string surname = 3;
+	string email = 4;
+	string name = 5;
+}	

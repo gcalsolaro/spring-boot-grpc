@@ -1,0 +1,2 @@
+INSERT INTO user (id_user, c_fiscal_code, name, surname, email) VALUES (1, 'CLSGPP87M28E409V', 'Giuseppe', 'Calsolaro', 'giuseppe.calsolaro87@gmail.com');
+INSERT INTO instance (id_instance, c_instance, fk_user, info) VALUES (1, 'TEST', 1, 'grpc test');
