@@ -2,6 +2,9 @@ package com.gcalsolaro.grpc.server.service;
 
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.NameTokenizers;
+import org.modelmapper.protobuf.ProtobufModule;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.gcalsolaro.grpc.artifact.service.InstanceRequest;
@@ -27,22 +30,15 @@ public class InstanceServiceImpl extends InstanceServiceImplBase {
 		if (optInstance.isPresent()) {
 			Instance instanceJpa = optInstance.get();
 			User userJpa = instanceJpa.getUser();
-			
-			com.gcalsolaro.grpc.artifact.model.User userGrpc = com.gcalsolaro.grpc.artifact.model.User.newBuilder()
-					.setIdUser(userJpa.getIdUser())
-					.setName(userJpa.getName())
-					.setSurname(userJpa.getSurname())
-					.setFiscalCode(userJpa.getFiscalCode())
-					.setEmail(userJpa.getEmail())
-					.build();
-			
-			com.gcalsolaro.grpc.artifact.model.Instance instanceGrpc = com.gcalsolaro.grpc.artifact.model.Instance.newBuilder()
-					.setIdInstance(instanceJpa.getIdInstance())
-					.setCInstance(instanceJpa.getcInstance())
-					.setInfo(instanceJpa.getInfo())
+
+			ModelMapper mapper = new ModelMapper().registerModule(new ProtobufModule());
+			mapper.getConfiguration().setDestinationNameTokenizer(NameTokenizers.UNDERSCORE);
+
+			com.gcalsolaro.grpc.artifact.model.User userGrpc = mapper.map(userJpa, com.gcalsolaro.grpc.artifact.model.User.Builder.class).build();
+			com.gcalsolaro.grpc.artifact.model.Instance instanceGrpc = mapper.map(instanceJpa, com.gcalsolaro.grpc.artifact.model.Instance.Builder.class)
 					.setUser(userGrpc)
 					.build();
-			
+
 			InstanceResponse response = InstanceResponse.newBuilder()
 					.setSuccess(true)
 					.setInstance(instanceGrpc)
